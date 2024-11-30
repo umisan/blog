@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>データ処理に関する技術手帖</title>
+    <title>一人テックブログ</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on データ処理に関する技術手帖</description>
+    <description>Recent content on 一人テックブログ</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Sat, 30 Nov 2024 13:02:43 +0900</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Math Example</title>
+      <link>http://localhost:1313/posts/math-example/</link>
+      <pubDate>Sat, 30 Nov 2024 13:02:43 +0900</pubDate>
+      <guid>http://localhost:1313/posts/math-example/</guid>
+      <description>&lt;p&gt;This is an inline $a^*=x-b^*$ equation.&lt;/p&gt;&#xA;&lt;p&gt;These are also block equations:&lt;/p&gt;&#xA;&lt;p&gt;$$a^2=x-b^*$$&lt;/p&gt;&#xA;&lt;p&gt;$$ a^2=x-b^* $$&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;a^2=x-b^*&#xA;$$&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

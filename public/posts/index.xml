@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on データ処理に関する技術手帖</title>
+    <title>Posts on 一人テックブログ</title>
     <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on データ処理に関する技術手帖</description>
+    <description>Recent content in Posts on 一人テックブログ</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Sat, 30 Nov 2024 13:02:43 +0900</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Math Example</title>
+      <link>http://localhost:1313/posts/math-example/</link>
+      <pubDate>Sat, 30 Nov 2024 13:02:43 +0900</pubDate>
+      <guid>http://localhost:1313/posts/math-example/</guid>
+      <description>&lt;p&gt;This is an inline $a^2=x-b^*$ equation.&lt;/p&gt;&#xA;&lt;p&gt;These are block equations:&lt;/p&gt;&#xA;&lt;p&gt;[a^&lt;em&gt;=x-b^&lt;/em&gt;]&lt;/p&gt;&#xA;&lt;p&gt;[ a^&lt;em&gt;=x-b^&lt;/em&gt; ]&lt;/p&gt;&#xA;&lt;p&gt;[&#xA;a^&lt;em&gt;=x-b^&lt;/em&gt;&#xA;]&lt;/p&gt;&#xA;&lt;p&gt;These are also block equations:&lt;/p&gt;&#xA;&lt;p&gt;$$a^&lt;em&gt;=x-b^&lt;/em&gt;$$&lt;/p&gt;&#xA;&lt;p&gt;$$ a^&lt;em&gt;=x-b^&lt;/em&gt; $$&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;a^&lt;em&gt;=x-b^&lt;/em&gt;&#xA;$$&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
