@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database Theory on 一人テックブログ</title>
+    <link>http://localhost:1313/database-theory/</link>
+    <description>Recent content in Database Theory on 一人テックブログ</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 02 Dec 2024 10:35:20 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/database-theory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Acyclic joinの分類</title>
+      <link>http://localhost:1313/database-theory/acyclic-query/</link>
+      <pubDate>Mon, 02 Dec 2024 10:35:20 +0900</pubDate>
+      <guid>http://localhost:1313/database-theory/acyclic-query/</guid>
+      <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;p&gt;Acyclicなconjuntive queryにはいくつか定義があり、階層をなしています。&#xA;この記事では、論文を読む中で遭遇したある程度メジャーであると考えられるいくつかのクエリ種別についてまとめます。&lt;/p&gt;&#xA;&lt;h2 id=&#34;alpha-acyclic-join&#34;&gt;$\alpha$-acyclic join&lt;/h2&gt;&#xA;&lt;p&gt;単にasyclic joinと呼ばれることもあります。&#xA;本記事で紹介するクエリ種別の中で最も広範なクエリを含む種別となっています。&#xA;conjunctive query $q(V, E)$は下記の条件を満たす木で構成された森が存在するとき、$\alpha$-acyclic joinとなります。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;各リレーション$e \in E$を頂点とする&lt;/li&gt;&#xA;&lt;li&gt;各変数$v \in V$について、$v$を含むリレーションのみを取り出したとき連結な部分木になっている&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;また、上記のような性質を持つ木をjoin treeと呼びます。&lt;/p&gt;&#xA;&lt;p&gt;例を示します。&#xA;以下のクエリは画像のようなjoin tree $T$を構成することができるため、$\alpha$-acyclic joinです。&#xA;$$&#xA;\begin{align}&#xA;V &amp;amp;= \{A, B, C, D, E, F\} \\&#xA;E &amp;amp;= \{(ABCD), (BCDE), (CE), (DE), (AF)\}&#xA;\end{align}&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/acyclic-query/join-tree.png&#34; alt=&#34;join_tree&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;hierarchical-join&#34;&gt;Hierarchical join&lt;/h2&gt;&#xA;&lt;p&gt;$E_x = \{e \in E\ : x \in e\}$としたとき(つまり、変数$x$を含むリレーションの集合)、任意の変数の対$x, y \in V$に対して以下の条件を満たすとき、conjunctive queryはhierarchical joinとなります。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;$E_x \subseteq E_y$&lt;/li&gt;&#xA;&lt;li&gt;もしくは$E_x \bigcap E_y = \emptyset$&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;hierarchical joinでは、$E_x \subseteq E_y$ならば$x$が$y$の子孫となるような森を構成することができます。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

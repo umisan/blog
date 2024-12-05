@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database Theory on 一人テックブログ</title>
+    <link>http://localhost:1313/theory/</link>
+    <description>Recent content in Database Theory on 一人テックブログ</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sat, 30 Nov 2024 16:42:01 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/theory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test2</title>
+      <link>http://localhost:1313/theory/test2/</link>
+      <pubDate>Sat, 30 Nov 2024 16:42:01 +0900</pubDate>
+      <guid>http://localhost:1313/theory/test2/</guid>
+      <description>&lt;p&gt;222&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Test</title>
+      <link>http://localhost:1313/theory/test/</link>
+      <pubDate>Sat, 30 Nov 2024 16:35:54 +0900</pubDate>
+      <guid>http://localhost:1313/theory/test/</guid>
+      <description>&lt;p&gt;aaaa&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

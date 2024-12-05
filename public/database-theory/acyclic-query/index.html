@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja-jp"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="description" content="はじめに
+Acyclicなconjuntive queryにはいくつか定義があり、階層をなしています。
+この記事では、論文を読む中で遭遇したある程度メジャーであると考えられるいくつかのクエリ種別についてまとめます。
+$\alpha$-acyclic join
+単にasyclic joinと呼ばれることもあります。
+本記事で紹介するクエリ種別の中で最も広範なクエリを含む種別となっています。
+conjunctive query $q(V, E)$は下記の条件を満たす木で構成された森が存在するとき、$\alpha$-acyclic joinとなります。
+
+各リレーション$e \in E$を頂点とする
+各変数$v \in V$について、$v$を含むリレーションのみを取り出したとき連結な部分木になっている
+
+また、上記のような性質を持つ木をjoin treeと呼びます。
+例を示します。
+以下のクエリは画像のようなjoin tree $T$を構成することができるため、$\alpha$-acyclic joinです。
+$$
+\begin{align}
+V &amp;= \{A, B, C, D, E, F\} \\
+E &amp;= \{(ABCD), (BCDE), (CE), (DE), (AF)\}
+\end{align}
+$$
+
+Hierarchical join
+$E_x = \{e \in E\ : x \in e\}$としたとき(つまり、変数$x$を含むリレーションの集合)、任意の変数の対$x, y \in V$に対して以下の条件を満たすとき、conjunctive queryはhierarchical joinとなります。
+
+$E_x \subseteq E_y$
+もしくは$E_x \bigcap E_y = \emptyset$
+
+hierarchical joinでは、$E_x \subseteq E_y$ならば$x$が$y$の子孫となるような森を構成することができます。">  
+
+  <title>
+    
+      Acyclic joinの分類
+    
+  </title>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.b3f3f10b76da53cb419a1c5b31ac9aa19368c212bd657c216cb741770676d110e21001bc85bb2527dd4e537a4c34b5333eda55e587f77769df67bb48cca62337.css" integrity="sha512-s/PxC3baU8tBmhxbMayaoZNowhK9ZXwhbLdBdwZ20RDiEAG8hbslJ91OU3pMNLUzPtpV5Yf3d2nfZ7tIzKYjNw==" />
+   <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+ 
+</head>
+<body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+<a href="/">..</a>
+
+
+<article>
+    <p class="post-meta">
+        <time datetime="2024-12-02 10:35:20 &#43;0900 JST">
+            2024-12-02
+        </time>
+    </p>
+
+    <h1>Acyclic joinの分類</h1>
+
+    
+
+    <h2 id="はじめに">はじめに</h2>
+<p>Acyclicなconjuntive queryにはいくつか定義があり、階層をなしています。
+この記事では、論文を読む中で遭遇したある程度メジャーであると考えられるいくつかのクエリ種別についてまとめます。</p>
+<h2 id="alpha-acyclic-join">$\alpha$-acyclic join</h2>
+<p>単にasyclic joinと呼ばれることもあります。
+本記事で紹介するクエリ種別の中で最も広範なクエリを含む種別となっています。
+conjunctive query $q(V, E)$は下記の条件を満たす木で構成された森が存在するとき、$\alpha$-acyclic joinとなります。</p>
+<ul>
+<li>各リレーション$e \in E$を頂点とする</li>
+<li>各変数$v \in V$について、$v$を含むリレーションのみを取り出したとき連結な部分木になっている</li>
+</ul>
+<p>また、上記のような性質を持つ木をjoin treeと呼びます。</p>
+<p>例を示します。
+以下のクエリは画像のようなjoin tree $T$を構成することができるため、$\alpha$-acyclic joinです。
+$$
+\begin{align}
+V &amp;= \{A, B, C, D, E, F\} \\
+E &amp;= \{(ABCD), (BCDE), (CE), (DE), (AF)\}
+\end{align}
+$$</p>
+<p><img src="/images/acyclic-query/join-tree.png" alt="join_tree"></p>
+<h2 id="hierarchical-join">Hierarchical join</h2>
+<p>$E_x = \{e \in E\ : x \in e\}$としたとき(つまり、変数$x$を含むリレーションの集合)、任意の変数の対$x, y \in V$に対して以下の条件を満たすとき、conjunctive queryはhierarchical joinとなります。</p>
+<ul>
+<li>$E_x \subseteq E_y$</li>
+<li>もしくは$E_x \bigcap E_y = \emptyset$</li>
+</ul>
+<p>hierarchical joinでは、$E_x \subseteq E_y$ならば$x$が$y$の子孫となるような森を構成することができます。</p>
+<p>例を示します。
+以下のクエリは、全ての変数のペア$(x, y)$について$E_x \subseteq E_y$もしくは$E_x \bigcap E_y = \emptyset$が成り立つため、hierarchical joinとなります。
+$$
+\begin{align}
+V &amp;= \{A, B, C, D, E, F\} \\
+E &amp;= \{(ABCD), (ABC), (AB), (AD), (EF), (E), (F)\}
+\end{align}
+$$
+変数の森は以下の図の様になります。
+<img src="/images/acyclic-query/hierarchical-join.png" alt="hierarchical-join">
+このクラスのクエリはprobabilistic databasesやupdateが存在する状況でのクエリにおいて、良い特徴があるようです。</p>
+<h2 id="r-hierarchical-join">r-hierarchical join</h2>
+<p>r-hierarchical joinはhirarchical join拡張したクラスです。
+具体的にはreduceという処理をクエリに対して実行したのちにhierarchical joinとなるクエリがr-hierarchical joinとなります。
+reduceとは、あるリレーション$e \in E$に対して$e \subseteq e&rsquo;$となるようなリレーション$e&rsquo; \in E$が存在する場合に、$e$を取り除く操作です。
+reduceを繰り返し行い、これ以上reduceを行うことができなくなったクエリをreduced queryと呼びます。</p>
+<p>例を示します。
+以下のクエリは、変数のペア$(A, C)$に注目したとき、$E_A \bigcap E_C \neq \emptyset$であるのに$E_A \subseteq E_C$でも$E_C \subseteq E_A$でもないため、hierarchical joinではありません。
+しかし、reduceを行うことでリレーション$BC$が削除されるためhierarchical joinとなります。
+$$
+\begin{align}
+V &amp;= \{A, B, C\} \\
+E &amp;= \{(ABC), (AB), (BC)\}
+\end{align}
+$$
+上記のクエリをreduceすると以下のようになります。
+$$
+\begin{align}
+V &amp;= \{A, B, C\} \\
+E&rsquo; &amp;= \{(ABC)\}
+\end{align}
+$$</p>
+<h2 id="tall-flat-join">Tall-flat join</h2>
+<p>Tall-flat joinは特殊なhierarchical joinです。
+具体的には変数の集合$V = \{x_1, x_2, \dots, x_h, y_1, y_2, \dots, y_l\}$に対して、以下の条件が成り立つhierarchical joinがtall-flat joinとなります。</p>
+<ul>
+<li>$E_{x_1} \supseteq E_{x_2} \supseteq \dots \supseteq E_{x_h}$</li>
+<li>$j = [1, l]$について$E_{x_h} \supseteq E_{y_j}$</li>
+<li>$j = [1, l]$について$|E_{y_j}| = 1$</li>
+</ul>
+<p>tall-flat joinの変数の森は以下の図のようになります。
+<img src="/images/acyclic-query/tall-flat.png" alt="tall-flat">
+一直線に並んだ$x$のパスの末端に$y$が連なる構造になります。</p>
+<p>tall-flat joinの例としては以下のようなクエリが挙げられます。
+$$
+\begin{align}
+V &amp;= \{A, B, C, D, E, F\} \\
+E &amp;= \{(ABCD), (ABC), (AB), (A), (ABCDE), (ABCDF)\}
+\end{align}
+$$
+変数の森は以下のようになります。
+<img src="/images/acyclic-query/tall-flat-example.png" alt="tall-flat-example"></p>
+<h2 id="階層関係">階層関係</h2>
+<p>最後に階層関係についてまとめます。
+まず、定義よりtall-flat joinはhierarchical joinのサブクラスです。
+また、hierachical joinはr-hierarchical joinです。
+これは、reduceによって包含関係に変化が生じないためです。
+例えば$E_x \subseteq E_y$という包含関係があった場合、$E_x$に含まれるリレーションは$x$と$y$を含みます。
+この時、reduceによって$x$は含むが$y$を含まないリレーションが生まれると包含関係が崩れしてしまいますが、reduceの定義上リレーションが新しく生まれることはありません。
+一方で、r-hierarchical joinはhierarchical joinではないクエリも含みます。
+したがって、ここまでで以下の階層関係が成り立っていることが分かります。
+$$
+\begin{equation}
+\text{tall-flat} \subseteq \text{hierarchical} \subseteq \text{r-hierarchical}
+\end{equation}
+$$
+次にr-hierarchical joinとacyclic joinの関係について考えます。
+もしr-hierarchical joinの中にacyclic joinに含まれないクエリが存在したとします。
+この場合、このクエリのjoin treeを構成しようとすると閉路が生まれてしまうことを意味しています。
+閉路が生まれてしまうということは、互いに素ではなくかつ包含関係にない変数のペアが存在することになります。
+例えば、$(AB), (BC), (CA)$というリレーションが存在する場合、join treeを構成しようとすると閉路になってしまい、$E_A$と$E_B$は互いに素ではなくかつ包含関係にもありません。
+また、reduceによってこの閉路を解消しようとすると、閉路に含まれる全ての変数を含むリレーションが必要になりますが、そのようなリレーションが存在する場合、そもそも閉路を含まずにjoin treeを構成することができます。
+例えば、先ほどの例の場合$(ABC)$というリレーションがあると、reduced queryでは閉路を解消することができますが、そもそも下記のようなjoin treeが構成できるため、前提条件に合致しません。
+<img src="/images/acyclic-query/reducing-cycle.png" alt="reducing-cycle">
+したがって、r-hierarchical joinは必ずacyclic joinとなります。
+以上より、最終的な階層関係は以下のようになります。
+$$
+\begin{equation}
+\text{tall-flat} \subseteq \text{hierarchical} \subseteq \text{r-hierarchical} \subseteq \text{acyclic}
+\end{equation}
+$$</p>
+<h2 id="参考文献">参考文献</h2>
+<p><a href="https://arxiv.org/abs/1903.09717">Instance and Output Optimal Parallel Algorithms for Acyclic Joins</a>
+<a href="https://dl.acm.org/doi/10.1145/3452021.3458319">Cover or Pack: New Upper and Lower Bounds for Massively Parallel Joins</a></p>
+
+</article>
+
+                
+
+
+            </div>
+        </main>
+    </body>
+</html>
