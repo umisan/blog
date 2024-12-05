@@ -122,5 +122,5 @@ $$
 \\end{equation}
 $$
 ## 参考文献
-[Instance and Output Optimal Parallel Algorithms for Acyclic Joins](https://arxiv.org/abs/1903.09717)
-[Cover or Pack: New Upper and Lower Bounds for Massively Parallel Joins](https://dl.acm.org/doi/10.1145/3452021.3458319)
+- [Instance and Output Optimal Parallel Algorithms for Acyclic Joins](https://arxiv.org/abs/1903.09717)
+- [Cover or Pack: New Upper and Lower Bounds for Massively Parallel Joins](https://dl.acm.org/doi/10.1145/3452021.3458319)
