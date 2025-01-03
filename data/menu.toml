@@ -20,10 +20,19 @@ title = "posts by category"
   title = "database theory"
     [entries.entries.post_list]
     section = "database-theory"
-    limit = 1
+    limit = 5
     show_more = true
     show_more_text = "See more posts..."
     show_more_url = "database-theory"
+  [[entries.entries]]
+  title = "experiments"
+    [entries.entries.post_list]
+    section = "experiments"
+    limit = 5
+    show_more = true
+    show_more_text = "See more posts..."
+    show_more_url = "experiments"
+
 
 [[entries]]
 title = "rss"
