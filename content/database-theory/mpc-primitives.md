@@ -1,6 +1,6 @@
 +++
 date = '2026-04-24T22:24:09+09:00'
-draft = true
+draft = false
 title = 'MPC Primitives'
 mathjax = true
 +++
